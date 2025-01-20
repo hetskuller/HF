@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Fullscreen style for both pages */
+        .page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            text-align: center;
+        }
+
+        /* Styles for the first page */
+        .home {
+            background-color: black;
+            color: white;
+        }
+
+        .home h1, .home p {
+            font-weight: bold;
+        }
+
+        .download {
+            color: red;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        /* Styles for the second page */
+        .download-page {
+            display: none;
+            background-color: red;
+            color: black;
+        }
+
+        .download-page h1 {
+            font-weight: bold;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .home h1, .download-page h1 {
+                font-size: 24px;
+            }
+            .home p {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <script>
+        function showDownloadPage() {
+            document.querySelector('.home').style.display = 'none';
+            document.querySelector('.download-page').style.display = 'flex';
+        }
+    </script>
+</head>
+<body>
+    <!-- Home Page -->
+    <div class="page home">
+        <div>
+            <h1>Welcome to Our Website</h1>
+            <p>Experience the best features here.</p>
+            <a href="#" class="download" onclick="showDownloadPage()">Download the App</a>
+        </div>
+    </div>
+
+    <!-- Download Page -->
+    <div class="page download-page">
+        <div>
+            <h1>Welcome to the New Generation of Alphas</h1>
+            <a href="login.html" style="color: white; font-weight: bold; text-decoration: none; font-size: 18px;">Go to Login Page</a>
+        </div>
+    </div>
+</body>
+</html>
